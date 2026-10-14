@@ -1267,7 +1267,7 @@ strong { font-weight: 700; color: var(--ink); }
   letter-spacing: -.01em;
 }
 .field label .req { color: var(--amber-800); }
-.field input,
+.field input:not([type="checkbox"]),
 .field select,
 .field textarea {
   width: 100%;
@@ -1294,6 +1294,26 @@ strong { font-weight: 700; color: var(--ink); }
 .field input:hover,
 .field select:hover,
 .field textarea:hover { border-color: var(--line-strong); }
+
+/* Чекбокс согласия: возвращаем нативный вид — общее правило .field input задавало appearance:none и padding 14px, из-за чего галочка не появлялась */
+.field input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 3px 0 0;
+  flex: none;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  accent-color: var(--amber-600);
+  cursor: pointer;
+}
+.field input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--amber-400);
+  outline-offset: 2px;
+}
 .field.select-wrap select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c87ac' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
