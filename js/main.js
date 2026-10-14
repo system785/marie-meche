@@ -78,7 +78,7 @@
     $$('[data-stagger]').forEach((group) => {
       $$('.reveal', group).forEach((el, i) => {
         if (!el.style.getPropertyValue('--d')) {
-          el.style.setProperty('--d', (i * 85) + 'ms');
+          el.style.setProperty('--d', (Math.min(i, 8) * 85) + 'ms');
         }
       });
     });
