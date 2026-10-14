@@ -8,3 +8,7 @@ desktop.ini
 *.log
 _tmp/
 _sheet.jpg
+
+# Scripts that generate the pages (not part of the published site)
+_build/
+__pycache__/
