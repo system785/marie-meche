@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Yandex
+Allow: /
+Disallow: /privacy.html
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid
+
+Sitemap: https://system785.github.io/marie-meche/sitemap.xml
